@@ -1,4 +1,4 @@
-# FMCG AI Business Insights Assistant
+# FMCG Business Insights Assistant
 
 ## Business Problem
 
@@ -6,7 +6,7 @@ FMCG companies generate large volumes of sales, promotion, and inventory data ev
 
 * Which region is performing best?
 * Which promotions are generating the highest returns?
-* Which products are experiencing stockouts?
+* Which products are experiencing inventory issues?
 * Which products contribute most to revenue?
 
 Traditional reporting systems require multiple dashboards and manual analysis. This project aims to simplify decision-making through an intelligent business insights assistant.
@@ -21,6 +21,14 @@ Develop an analytics assistant capable of:
 * Performing relevant analysis
 * Generating actionable recommendations
 * Presenting insights through an interactive dashboard
+
+---
+
+## Live Demo
+
+### Streamlit Application
+
+https://fmcg-business-insights-assistant.streamlit.app/
 
 ---
 
@@ -52,7 +60,7 @@ campaigns.
 
 ### Inventory Health
 
-Identify stockout events that may lead to lost sales.
+Monitor inventory availability and identify operational risks.
 
 ### Product Performance
 
@@ -99,9 +107,9 @@ Different promotion types generate different sales lifts:
 
 Revenue differs across regions to support comparative performance analysis.
 
-### Inventory Constraints
+### Inventory Monitoring
 
-Inventory levels are linked to sales activity and include stockout events.
+Inventory levels are linked to sales activity and availability is tracked across products and regions.
 
 ### Product Variability
 
@@ -118,9 +126,9 @@ Intent Detection
       ↓
 Analytics Engine
       ↓
-Insight Generation
+Business Insights Generation
       ↓
-Streamlit Dashboard
+Interactive Dashboard
 ```
 
 ---
@@ -140,9 +148,9 @@ Streamlit Dashboard
 
 ### Inventory Analysis
 
-* Total stockouts
-* Products with highest stockouts
-* Regions with inventory issues
+* Inventory monitoring
+* Product availability tracking
+* Regional inventory insights
 
 ### Product Analysis
 
@@ -151,19 +159,60 @@ Streamlit Dashboard
 
 ---
 
+## Dashboard Features
+
+### KPI Dashboard
+
+The application provides high-level business metrics including:
+
+* Total Products
+* Total Stores
+* Total Sales Records
+* Regions Covered
+
+### Interactive Analytics
+
+Users can explore:
+
+* Regional Revenue Performance
+* Promotion Effectiveness
+* Inventory Analysis
+* Product Performance Analysis
+
+### Automated Business Insights
+
+For every analysis, the system generates:
+
+* Executive Summary
+* Key Findings
+* Business Recommendations
+
+---
+
 ## Technology Stack
+
+### Analytics Layer
 
 * Python
 * Pandas
 * NumPy
+
+### Dashboard & Visualization
+
 * Streamlit
+* Plotly
+
+### Deployment
+
+* GitHub
+* Streamlit Community Cloud
 
 ---
 
 ## Project Structure
 
 ```text
-fmcg-ai-business-insights-assistant/
+fmcg-business-insights-assistant/
 
 ├── app.py
 ├── analytics.py
@@ -193,12 +242,25 @@ streamlit run app.py
 
 * Which region generates the most revenue?
 * Which promotion performs best?
-* Where are stockouts occurring?
+* Where are we seeing inventory issues?
 * What are our top-selling products?
 * Which products generate the highest revenue?
 
 ---
 
+## Future Enhancements
+
+Potential improvements include:
+
+* Sales Forecasting
+* Demand Prediction
+* Inventory Optimization
+* Real-Time Data Integration
+* Advanced Interactive Dashboards
+* Machine Learning Based Recommendations
+
+---
+
 ## Business Outcome
 
-The solution demonstrates how business analytics can be combined with conversational interaction to help decision-makers quickly understand sales performance, promotion effectiveness, inventory challenges, and product trends using a single interface.
+The solution demonstrates how business analytics can be combined with conversational interaction and interactive dashboards to help decision-makers quickly understand sales performance, promotion effectiveness, inventory trends, and product performance using a single interface.
