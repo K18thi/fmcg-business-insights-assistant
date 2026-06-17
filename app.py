@@ -1,7 +1,8 @@
 """FMCG AI Business Insights Assistant — Streamlit application (offline)."""
 
 from __future__ import annotations
-
+import pandas as pd
+import plotly.express as px
 from typing import Any, Callable
 
 import streamlit as st
@@ -337,31 +338,177 @@ def _render_header() -> None:
         "and deliver actionable insights."
     )
     st.divider()
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric("Products", 20)
+    col2.metric("Stores", 30)
+    col3.metric("Sales Records", "14,400")
+    col4.metric("Regions", 4)
+
+    st.divider()
 
 
 def _render_results(result: dict[str, Any]) -> None:
-    """Display the full analysis pipeline output."""
-    st.subheader("Results")
+    st.subheader("Business Insights Dashboard")
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("**User Question**")
+    q1, q2 = st.columns([3, 1])
+
+    with q1:
         st.info(result["question"])
-    with col2:
-        st.markdown("**Detected Intent**")
+
+    with q2:
         st.success(result["intent_label"])
 
-    st.markdown("**Analytics Output**")
-    st.json(result["analytics_output"])
+    st.divider()
 
-    st.markdown("**Executive Summary**")
-    st.write(result["executive_summary"])
+    if result["intent"] == "regional_analysis":
 
-    st.markdown("**Key Finding**")
-    st.warning(result["key_finding"])
+        region_df = pd.DataFrame(
+            list(
+                result["analytics_output"]["revenue_by_region"].items()
+            ),
+            columns=["Region", "Revenue"]
+        )
 
-    st.markdown("**Recommendation**")
-    st.success(result["business_recommendation"])
+        c1, c2, c3 = st.columns(3)
+
+        c1.metric(
+            "Best Region",
+            result["analytics_output"]["best_region"]
+        )
+
+        c2.metric(
+            "Worst Region",
+            result["analytics_output"]["worst_region"]
+        )
+
+        c3.metric(
+            "Total Revenue",
+            f"${region_df['Revenue'].sum():,.0f}"
+        )
+
+        fig = px.bar(
+            region_df,
+            x="Region",
+            y="Revenue",
+            text="Revenue",
+            title="Revenue by Region"
+        )
+
+        st.plotly_chart(
+            fig,
+            use_container_width=True
+        )
+
+        st.dataframe(
+            region_df,
+            use_container_width=True
+        )
+
+    elif result["intent"] == "promotion_analysis":
+
+        promo_df = pd.DataFrame(
+            list(
+                result["analytics_output"][
+                    "average_revenue_by_promotion_type"
+                ].items()
+            ),
+            columns=["Promotion", "Revenue"]
+        )
+
+        st.metric(
+            "Best Promotion",
+            result["analytics_output"]["best_promotion_type"]
+        )
+
+        fig = px.pie(
+            promo_df,
+            names="Promotion",
+            values="Revenue",
+            title="Promotion Revenue Contribution"
+        )
+
+        st.plotly_chart(
+            fig,
+            use_container_width=True
+        )
+
+        st.dataframe(
+            promo_df,
+            use_container_width=True
+        )
+
+    elif result["intent"] == "inventory_analysis":
+
+        inventory_df = pd.DataFrame(
+            result["analytics_output"][
+                "regions_with_highest_stockouts"
+            ]
+        )
+
+        st.metric(
+            "Total Stockouts",
+            result["analytics_output"]["total_stockouts"]
+        )
+
+        fig = px.bar(
+            inventory_df,
+            x="region",
+            y="stockout_count",
+            title="Stockouts by Region"
+        )
+
+        st.plotly_chart(
+            fig,
+            use_container_width=True
+        )
+
+        st.dataframe(
+            inventory_df,
+            use_container_width=True
+        )
+
+    elif result["intent"] == "product_analysis":
+
+        product_df = pd.DataFrame(
+            result["analytics_output"][
+                "top_5_products_by_revenue"
+            ]
+        )
+
+        fig = px.bar(
+            product_df,
+            x="product_name",
+            y="revenue",
+            text="revenue",
+            title="Top Products by Revenue"
+        )
+
+        st.plotly_chart(
+            fig,
+            use_container_width=True
+        )
+
+        st.dataframe(
+            product_df,
+            use_container_width=True
+        )
+
+    st.divider()
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.subheader("Executive Summary")
+        st.write(result["executive_summary"])
+
+        st.subheader("Key Finding")
+        st.warning(result["key_finding"])
+
+    with col2:
+        st.subheader("Recommendation")
+        st.success(result["business_recommendation"])
+
 
 
 def main() -> None:
