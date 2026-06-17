@@ -1,0 +1,21 @@
+product_id,product_name,brand,category,sub_category,pack_size_ml,unit_price
+P001,PureSip Cola 250ml,PureSip,Carbonated,Cola,250,95.45
+P002,AquaPure Lemon-Lime 330ml,AquaPure,Carbonated,Lemon-Lime,330,38.26
+P003,PureSip Orange 2000ml,PureSip,Carbonated,Orange,2000,33.26
+P004,GoldenHarvest Ginger Ale 250ml,GoldenHarvest,Carbonated,Ginger Ale,250,27.83
+P005,AquaPure Orange 250ml,AquaPure,Juice,Orange,250,90.64
+P006,FreshFizz Apple 250ml,FreshFizz,Juice,Apple,250,115.92
+P007,GoldenHarvest Mixed Fruit 250ml,GoldenHarvest,Juice,Mixed Fruit,250,83.91
+P008,Sunrise Mango 200ml,Sunrise,Juice,Mango,200,121.06
+P009,VitalBoost Still 1000ml,VitalBoost,Water,Still,1000,37.12
+P010,VitalBoost Sparkling 500ml,VitalBoost,Water,Sparkling,500,77.22
+P011,MountainMist Flavored 250ml,MountainMist,Water,Flavored,250,21.03
+P012,PureSip Mineral 750ml,PureSip,Water,Mineral,750,70.09
+P013,Sunrise Classic 250ml,Sunrise,Energy,Classic,250,152.97
+P014,PureSip Sugar-Free 330ml,PureSip,Energy,Sugar-Free,330,87.88
+P015,Sunrise Zero Calorie 500ml,Sunrise,Energy,Zero Calorie,500,141.85
+P016,MountainMist Performance 500ml,MountainMist,Energy,Performance,500,99.23
+P017,PureSip Flavored Milk 200ml,PureSip,Dairy,Flavored Milk,200,66.29
+P018,Sunrise Lassi 200ml,Sunrise,Dairy,Lassi,200,79.87
+P019,PureSip Buttermilk 1000ml,PureSip,Dairy,Buttermilk,1000,39.46
+P020,MountainMist Smoothie 250ml,MountainMist,Dairy,Smoothie,250,45.91

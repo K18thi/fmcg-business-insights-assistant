@@ -1,0 +1,31 @@
+store_id,store_name,region,city,store_format
+S001,Delhi Supermarket #1,North,Delhi,Supermarket
+S002,Chennai Hypermarket #2,South,Chennai,Hypermarket
+S003,Guwahati Convenience #3,East,Guwahati,Convenience
+S004,Surat Traditional Trade #4,West,Surat,Traditional Trade
+S005,Amritsar Supermarket #5,North,Amritsar,Supermarket
+S006,Visakhapatnam Hypermarket #6,South,Visakhapatnam,Hypermarket
+S007,Jamshedpur Convenience #7,East,Jamshedpur,Convenience
+S008,Mumbai Traditional Trade #8,West,Mumbai,Traditional Trade
+S009,Chandigarh Supermarket #9,North,Chandigarh,Supermarket
+S010,Hyderabad Hypermarket #10,South,Hyderabad,Hypermarket
+S011,Patna Convenience #11,East,Patna,Convenience
+S012,Nagpur Traditional Trade #12,West,Nagpur,Traditional Trade
+S013,Dehradun Supermarket #13,North,Dehradun,Supermarket
+S014,Madurai Hypermarket #14,South,Madurai,Hypermarket
+S015,Kolkata Convenience #15,East,Kolkata,Convenience
+S016,Pune Traditional Trade #16,West,Pune,Traditional Trade
+S017,Jaipur Supermarket #17,North,Jaipur,Supermarket
+S018,Kochi Hypermarket #18,South,Kochi,Hypermarket
+S019,Ranchi Convenience #19,East,Ranchi,Convenience
+S020,Indore Traditional Trade #20,West,Indore,Traditional Trade
+S021,Agra Supermarket #21,North,Agra,Supermarket
+S022,Bangalore Hypermarket #22,South,Bangalore,Hypermarket
+S023,Bhubaneswar Convenience #23,East,Bhubaneswar,Convenience
+S024,Ahmedabad Traditional Trade #24,West,Ahmedabad,Traditional Trade
+S025,Lucknow Supermarket #25,North,Lucknow,Supermarket
+S026,Coimbatore Hypermarket #26,South,Coimbatore,Hypermarket
+S027,Siliguri Convenience #27,East,Siliguri,Convenience
+S028,Vadodara Traditional Trade #28,West,Vadodara,Traditional Trade
+S029,Delhi Supermarket #29,North,Delhi,Supermarket
+S030,Chennai Hypermarket #30,South,Chennai,Hypermarket
